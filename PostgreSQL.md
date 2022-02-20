@@ -38,28 +38,14 @@ brew services reststart postgresql
 
 ## Commands
 
+Credits: 
+
+- [@ibraheem4/postgres-brew.md](https://gist.github.com/ibraheem4/ce5ccd3e4d7a65589ce84f2a3b7c23a3)
+
 ### Create user
 
 ```
 createuser --interactive --pwprompt
-```
-
-### List all users
-
-```
-# Log into postgres
-psql -d postgres
-
-# Type:
-\du
-# or
-\du+
-```
-
-### Quit psql
-
-```
-\q
 ```
 
 ### Create database
@@ -95,6 +81,24 @@ dropdb <database_name>
 dropdb <database_name> && createdb <database_name>
 ```
 > dropdb mydatabasename && createdb mydatabasename
+
+### List all users
+
+```
+# Log into postgres
+psql -d postgres
+
+# Type:
+\du
+# or
+\du+
+```
+
+### Quit psql
+
+```
+\q
+```
 
 ### Backup
 
