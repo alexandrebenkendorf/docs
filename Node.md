@@ -70,13 +70,21 @@ nvm use node
 
 ### Automatic change
 
-Create `.nvmrc` file on root folder of your app to allow automatically node version change using 
+Create `.nvmrc` file on root folder of your app to allow automatically node version change using.
+
+Open the terminal on your root app folder
+
+#### Using current node version
+
+Run
 
 ```
 node -v > .nvmrc
 ```
 
-Or create a `.nvmrc` file with the version you want i.g.:
+#### Create a file manually
+
+Create a `.nvmrc` file with the version you want i.g.:
 
 ```
 v12.22.8
