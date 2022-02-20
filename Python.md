@@ -1,6 +1,6 @@
 # Python
 
-##pyevn
+## pyevn
 
 Install `pyenv` to manage python versions
 
