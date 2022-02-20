@@ -1,6 +1,6 @@
 # Node
 
-## Version Manager
+## NVM - Node Version Manager
 
 [Documentation](https://github.com/nvm-sh/nvm)
 
@@ -70,8 +70,14 @@ nvm use node
 
 ### Automatic change
 
-Create `.nvmrc` file on root folder to allow automatically node version change using 
+Create `.nvmrc` file on root folder of your app to allow automatically node version change using 
 
 ```
 node -v > .nvmrc
+```
+
+Or create a `.nvmrc` file with the version you want i.g.:
+
+```
+v12.22.8
 ```
