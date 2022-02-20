@@ -1,0 +1,77 @@
+# Node
+
+## Version Manager
+
+[Documentation](https://github.com/nvm-sh/nvm)
+
+## Installation
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+```
+
+Add to `~/.zprofile`:
+
+```
+# NVM
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Autoload NVM
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+```
+
+## Usage
+
+To download, compile, and install the latest release of node, do this:
+
+```
+nvm install node # "node" is an alias for the latest version
+```
+
+To install a specific version of node:
+
+```
+nvm install 14.7.0 # or 16.3.0, 12.22.1, etc
+```
+
+The first version installed becomes the default. New shells will start with the default version of node (e.g., nvm alias default).
+
+You can list available versions using `ls-remote`:
+
+```
+nvm ls-remote
+```
+
+And then in any new shell just use the installed version:
+
+```
+nvm use node
+```
+
+### Automatic change
+
+Create `.nvmrc` file on root folder to allow automatically node version change using 
+
+```
+node -v > .nvmrc
+```
