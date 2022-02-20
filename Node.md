@@ -1,5 +1,11 @@
 # Node
 
+## Installation
+
+```
+brew install node
+```
+
 ## NVM - Node Version Manager
 
 [Documentation](https://github.com/nvm-sh/nvm)
