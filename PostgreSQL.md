@@ -14,7 +14,7 @@ brew install postgresql
 >
 >Restart postgresql after an upgrade! 
 
-###Start/Stop/Restart 
+### Start/Stop/Restart 
 
 Manually 
 
@@ -22,7 +22,8 @@ Manually
 pg_ctl -D /usr/local/var/postgres start
 pg_ctl -D /usr/local/var/postgres stop
 ```
-Homebrew
+
+Via Homebrew
 
 ```
 brew services start postgresql
@@ -123,7 +124,7 @@ brew services stop postgresql@10
 
 brew postgresql-upgrade-database
 ```
-and run this
+and run
 
 ```
 pg_upgrade -v \                                    
