@@ -22,6 +22,8 @@ curl https://pyenv.run | bash
 
 ```
 brew install unixodbc
+export LDFLAGS="-L/opt/homebrew/Cellar/unixodbc/2.3.9_1/lib"
+export CPPFLAGS="-I/opt/homebrew/Cellar/unixodbc/2.3.9_1/include"
 pip install pyodbc
 ```
 
