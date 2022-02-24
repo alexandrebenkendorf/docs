@@ -27,7 +27,7 @@ export CPPFLAGS="-I/opt/homebrew/Cellar/unixodbc/2.3.9_1/include"
 pip install pyodbc
 ```
 
-## Error libmagic Mac M1
+### Error libmagic Mac M1
 
 ````
 raise ImportError('failed to find libmagic.  Check your installation')
