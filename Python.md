@@ -29,7 +29,7 @@ pip install pyodbc
 
 ### Error libmagic Mac M1
 
-````
+```
 raise ImportError('failed to find libmagic.  Check your installation')
 ImportError: failed to find libmagic.  Check your installation
 ```
