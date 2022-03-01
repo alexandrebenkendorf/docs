@@ -21,10 +21,17 @@ curl https://pyenv.run | bash
 ### Error pip install pyodbc: #include <sql.h>
 
 ```
+# Uninstall pyodbc if installed in the environment
 pip uninstall pyodbc
+
+# Install unixodbc via brew
 brew install unixodbc
+
+#Set Temporary Environment Variable
 export LDFLAGS="-L/opt/homebrew/Cellar/unixodbc/2.3.9_1/lib -liodbc -liodbcinst"
 export CPPFLAGS="-I/opt/homebrew/Cellar/unixodbc/2.3.9_1/include"
+
+# Install pyodbc in the environment
 pip install pyodbc
 ```
 [Source](https://whodeenie.medium.com/installing-pyodbc-and-unixodbc-for-apple-silicon-8e238ed7f216)
