@@ -21,11 +21,13 @@ curl https://pyenv.run | bash
 ### Error pip install pyodbc: #include <sql.h>
 
 ```
+pip uninstall pyodbc
 brew install unixodbc
-export LDFLAGS="-L/opt/homebrew/Cellar/unixodbc/2.3.9_1/lib"
+export LDFLAGS="-L/opt/homebrew/Cellar/unixodbc/2.3.9_1/lib -liodbc -liodbcinst"
 export CPPFLAGS="-I/opt/homebrew/Cellar/unixodbc/2.3.9_1/include"
 pip install pyodbc
 ```
+[Source](https://whodeenie.medium.com/installing-pyodbc-and-unixodbc-for-apple-silicon-8e238ed7f216)
 
 ### Error libmagic Mac M1
 
