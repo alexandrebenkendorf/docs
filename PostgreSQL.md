@@ -114,6 +114,21 @@ psql mydatabasename < path/to/backupname
 
 ## Troubleshooting
 
+### psycopg-binary 
+
+```
+python -V
+> Python 3.8.10
+
+brew install postgresql
+# If you open a new terminal tab you will see that pg_config is available
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@1.1/include"
+export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib -L${HOME}/.pyenv/versions/3.8.10/lib"
+pip install psycopg2-binary==2.8.6
+```
+
+[Source](https://github.com/psycopg/psycopg2/issues/1286#issuecomment-914286206)
+
 ### Server not connected
 
 Stop server on Brew and manually and restart via Brew.
