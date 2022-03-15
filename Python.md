@@ -64,10 +64,9 @@ sudo gem install ruby-filemagic -v 0.7.2 -- \
 then reinstall `python-magic`
 
 
-### Error psycopg2
+### Error - AssertionError: database connection isn't set to UTC
 
-#### psycopg > 2.9 - AssertionError: database connection isn't set to UTC
-Downgrade to 2.8.6
+If the psycopg2-binary is 2.9, downgrade it to 2.8
 ```
 pip install psycopg2==2.8.6
 # or 
@@ -76,7 +75,7 @@ pip install psycopg2-binary==2.8.6
 [Source](https://stackoverflow.com/a/68025007)
 
 
-#### error installing psycopg2 < 2.9
+#### Error installing psycopg2 < 2.9 Mac M1
 
 ```
 export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib -L/opt/homebrew/opt/libpq/lib"
