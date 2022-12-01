@@ -36,6 +36,20 @@ pip install pyodbc
 ```
 [Source](https://whodeenie.medium.com/installing-pyodbc-and-unixodbc-for-apple-silicon-8e238ed7f216)
 
+### Error installing Pillow
+
+```
+The headers or library files could not be found for jpeg, a required dependency when compiling Pillow from source.
+error: legacy-install-failure
+```
+
+Solved with 
+
+```
+brew install libjpeg libtiff little-cms2 openjpeg webp
+brew install freetype harfbuzz fribidi
+```
+
 ### Error libmagic Mac M1
 
 ```
