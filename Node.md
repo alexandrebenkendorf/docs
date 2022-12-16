@@ -95,3 +95,18 @@ Create a `.nvmrc` file with the version you want i.g.:
 ```
 v12.22.8
 ```
+
+## Troubleshoot
+
+### Error installing under v15
+
+For anything under v15, you will need to install node using Rosetta 2. 
+[Solution here](https://github.com/nvm-sh/nvm/issues/2350#issuecomment-734132550)
+
+
+Or enable it on iTerm2:
+
+![image](https://user-images.githubusercontent.com/11325962/208135760-b4fff8e5-2f6f-4c07-aaf8-242565ca888d.png)
+![image](https://user-images.githubusercontent.com/11325962/208136396-b637753c-1f7c-4bf9-a239-a97ae47249f4.png)
+
+[Source](https://github.com/nvm-sh/nvm/issues/2350#issuecomment-740379270)
