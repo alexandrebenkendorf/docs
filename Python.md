@@ -36,6 +36,13 @@ pip install pyodbc
 ```
 [Source](https://whodeenie.medium.com/installing-pyodbc-and-unixodbc-for-apple-silicon-8e238ed7f216)
 
+
+### Error symbol not found in flat namespace '_SQLAllocHandle'
+
+```
+pip install --no-binary :all: pyodbc
+```
+
 ### Error installing Pillow
 
 ```
