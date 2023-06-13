@@ -33,6 +33,14 @@ export CPPFLAGS="-I/opt/homebrew/Cellar/unixodbc/2.3.9_1/include"
 
 # Install pyodbc in the environment
 pip install pyodbc
+
+
+TL;DR;
+pip uninstall pyodbc
+brew install unixodbc
+export LDFLAGS="-L/opt/homebrew/Cellar/unixodbc/2.3.9_1/lib -liodbc -liodbcinst"
+export CPPFLAGS="-I/opt/homebrew/Cellar/unixodbc/2.3.9_1/include"
+pip install pyodbc
 ```
 [Source](https://whodeenie.medium.com/installing-pyodbc-and-unixodbc-for-apple-silicon-8e238ed7f216)
 
