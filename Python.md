@@ -114,8 +114,30 @@ pip install psycopg2-binary==2.8.6
 [Source](https://stackoverflow.com/a/67166417)
 
 
-### Error gobject-2.0-0 weasyprint Mac M1
+### Errors Weasyprint (Mac M1, Python 3.8.10)
 
+#### OSError: cannot load library 'pango-1.0-0'
+
+Full error
+```
+OSError: cannot load library 'pango-1.0-0': dlopen(pango-1.0-0, 0x0002): tried: 'pango-1.0-0' (no such file), '/System/Volumes/Preboot/Cryptexes/OSpango-1.0-0' (no such file), '/opt/homebrew/lib/pango-1.0-0' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/homebrew/lib/pango-1.0-0' (no such file), '/opt/homebrew/lib/pango-1.0-0' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/homebrew/lib/pango-1.0-0' (no such file), '/opt/homebrew/lib/pango-1.0-0' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/homebrew/lib/pango-1.0-0' (no such file), '/opt/homebrew/lib/pango-1.0-0' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/homebrew/lib/pango-1.0-0' (no such file), '/usr/lib/pango-1.0-0' (no such file, not in dyld cache), 'pango-1.0-0' (no such file).  Additionally, ctypes.util.find_library() did not manage to locate a library called 'pango-1.0-0'
+```
+Probably you forgot to install the weasyprint
+```
+brew install weasyprint
+```
+
+#### OSError: ctypes.util.find_library() did not manage to locate a library called 'fontconfig-1'
+
+```
+sudo cp $(brew --prefix fontconfig)/lib/libfontconfig.* /usr/local/lib
+```
+> Create the `lib` folder if you get the following error: `cp: /usr/local/lib is not a directory`
+
+[Source](https://github.com/Kozea/WeasyPrint/issues/1530#issuecomment-1331624718)
+
+
+#### gobject-2.0-0 
 ```
 brew install pango libffi
 sudo mkdir /usr/local/lib/
@@ -126,3 +148,5 @@ sudo ln -s /opt/homebrew/opt/fontconfig/lib/libfontconfig.1.dylib /usr/local/lib
 sudo ln -s /opt/homebrew/opt/pango/lib/libpangoft2-1.0.dylib /usr/local/lib/pangoft2-1.0
 ```
 [Source](https://stackoverflow.com/questions/69097224/gobject-2-0-0-not-able-to-load-on-macbook)
+
+
